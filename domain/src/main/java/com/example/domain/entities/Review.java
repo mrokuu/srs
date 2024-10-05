@@ -1,15 +1,12 @@
 package com.example.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reviews")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Review {
@@ -18,7 +15,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Instant nextReviewDate;
+    private LocalDateTime nextReviewDate;
 
     private double easeFactor = 2.5;
 
@@ -29,4 +26,52 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "card_id")
     private Card card;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getNextReviewDate() {
+        return nextReviewDate;
+    }
+
+    public void setNextReviewDate(LocalDateTime nextReviewDate) {
+        this.nextReviewDate = nextReviewDate;
+    }
+
+    public double getEaseFactor() {
+        return easeFactor;
+    }
+
+    public void setEaseFactor(double easeFactor) {
+        this.easeFactor = easeFactor;
+    }
+
+    public int getInterval() {
+        return interval;
+    }
+
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
+
+    public int getRepetition() {
+        return repetition;
+    }
+
+    public void setRepetition(int repetition) {
+        this.repetition = repetition;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
 }
