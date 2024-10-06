@@ -13,4 +13,11 @@ public class DeckCommandService {
     public Deck createDeck(Deck deck) {
         return deckCommandRepository.save(deck);
     }
+
+    public Deck updateDeck(Long deckId, Deck deck) {
+        return null;
+    }
+
+    public void deleteDeck(Long deckId) {
+    }
 }
