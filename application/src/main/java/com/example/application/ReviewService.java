@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class ReviewService {
 
 
-    private void calculateNextReview(Review review, int quality) {
+    public  void calculateNextReview(Review review, int quality) {
         // SM-2 Algorithm implementation
         if (quality < 3) {
             review.setRepetition(0);
