@@ -1,5 +1,6 @@
 package com.example.application.commands;
 
+
 import com.example.domain.entities.Deck;
 import com.example.infrastructure.commands.DeckCommandRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +16,14 @@ public class DeckCommandService {
     }
 
     public Deck updateDeck(Long deckId, Deck deck) {
-        return null;
+        Deck result = deckCommandRepository.findById(deckId)
+                .orElseThrow();
+
+        return deckCommandRepository.save(deck);
     }
 
     public void deleteDeck(Long deckId) {
+        Deck result = deckCommandRepository.findById(deckId).orElseThrow();
+        deckCommandRepository.delete(result);
     }
 }

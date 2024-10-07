@@ -18,6 +18,8 @@ public class DeckController {
     private final DeckCommandService deckCommandService;
     private final DeckQueryService deckQueryService;
 
+
+    //TODO: finish implementation after implementing User
     @GetMapping
     public ResponseEntity<List<Deck>> getUserDecks() {;
         List<Deck> decks = deckQueryService.getUserDecks();
