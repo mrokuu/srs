@@ -17,13 +17,13 @@ public class DeckCommandService {
 
     public Deck updateDeck(Long deckId, Deck deck) {
         Deck result = deckCommandRepository.findById(deckId)
-                .orElseThrow();
+                .orElseThrow(() -> new ResourceNotFoundException("Deck not found"));
 
         return deckCommandRepository.save(deck);
     }
 
     public void deleteDeck(Long deckId) {
-        Deck result = deckCommandRepository.findById(deckId).orElseThrow();
+        Deck result = deckCommandRepository.findById(deckId).orElseThrow(() -> new ResourceNotFoundException("Deck not found"));
         deckCommandRepository.delete(result);
     }
 }

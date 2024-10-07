@@ -1,4 +1,4 @@
-package com.example.api.deck;
+package com.example.application.commands;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
